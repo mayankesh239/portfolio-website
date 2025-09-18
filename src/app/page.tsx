@@ -34,7 +34,7 @@ export default function Home() {
           className="text-center md:text-left"
         >
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight whitespace-nowrap">
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
               Mayankesh Jha
             </span>

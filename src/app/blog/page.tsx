@@ -7,7 +7,7 @@ const blogs = [
     title: "How Small Habits Shape Success — Insights from Make Your Bed",
     link: "https://medium.com/@mayankesh.ss/how-small-habits-shape-success-insights-from-make-your-bed-a60e1b19228e",
     description:
-      "Explore how tiny daily habits can compound into major achievements. Insights from Admiral William H. McRaven's 'Make Your Bed' reveal the power of discipline, consistency, and small actions in shaping a successful life.",
+      "Explore how tiny daily habits can compound into major achievements. Insights from Admiral William H. McRaven&apos;s &apos;Make Your Bed&apos; reveal the power of discipline, consistency, and small actions in shaping a successful life.",
     image: "/makeYourBed.jpg",
   },
   {

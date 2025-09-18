@@ -20,7 +20,7 @@ const experiences = [
     duration: "Jul 2024 - Present",
     logo: "/infineon.jpeg",
     highlights: [
-      "As an Embedded Software Engineer at Infineon Technologies, I am responsible for designing and implementing device drivers for Infineon's microcontrollers used in the automotive industry.",
+      "As an Embedded Software Engineer at Infineon Technologies, I am responsible for designing and implementing device drivers for Infineon&apos;s microcontrollers used in the automotive industry.",
       "Involved in the design and development of Flash EEPROM Emulation driver (MCAL in AUTOSAR) for the Aurix 3G microcontroller.",
       "Adhered to MISRA C coding standards, used Polyspace, and followed embedded coding standards and best practices.",
       "Exposure to safety standard ISO 26262, including requirements analysis and implementation.",
@@ -49,7 +49,7 @@ const experiences = [
       "Automated API related CVEs acquisition for website display using python. It has saved 4-5 hrs of work per week",
       "Automated test templates (1000+) display on the Akto website using python script. It has saved 3-4 hrs of work per week.",
       "Modified a template used in AWS. Changed launch configuration to launch template.",
-      "Integrated Mixpanel to track some events in the Akto's backend.",
+      "Integrated Mixpanel to track some events in the Akto&apos;s backend.",
     ],
   },
   {
@@ -131,7 +131,7 @@ export default function AboutPage() {
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto text-center mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Hi, I'm Mayankesh Jha</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Hi, I&apos;m Mayankesh Jha</h1>
         <p className="text-gray-700 text-lg leading-relaxed mb-3">
           Passionate about solving complex challenges, specializing in <span className="font-semibold text-blue-600">Software Development</span>, <span className="font-semibold text-blue-600">Embedded Systems</span>, and <span className="font-semibold text-blue-600">Competitive Programming</span>.
         </p>
@@ -186,8 +186,8 @@ export default function AboutPage() {
         className="max-w-5xl mx-auto text-center mt-20 text-gray-600 text-lg"
       >
         <p>
-          Outside tech, I enjoy traveling, watching movies/web series, reading, blogging, and investing. I play musical instruments like guitar, violin, harmonica, and flute, and I'm improving my chess and photography skills.
-          <br></br>I'm also the author of{" "}
+          Outside tech, I enjoy traveling, watching movies/web series, reading, blogging, and investing. I play musical instruments like guitar, violin, harmonica, and flute, and I&apos;m improving my chess and photography skills.
+          <br></br>I&apos;m also the author of{" "}
         <a
           href="https://superprofile.bio/vp/the-hidden-economics-of-attention---master-your-time--focus--and-energy"
           target="_blank"

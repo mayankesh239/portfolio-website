@@ -37,9 +37,9 @@ const projects = [
     image: "/matrixMart.png",
   },
   {
-    title: "JSEF '22 Website",
+    title: "JSEF &apos;22 Website",
     description:
-      "Website for Jharkhand Science and Environment Festival (JSEF) '22, built using TypeScript and Next.js for EPAC, BIT Mesra.",
+      "Website for Jharkhand Science and Environment Festival (JSEF) &apos;22, built using TypeScript and Next.js for EPAC, BIT Mesra.",
     technologies: ["TypeScript", "Next.js", "React", "Web Development"],
     url: "https://github.com/mayankesh239/jsef-wesite",
     liveUrl: "https://jsef.vercel.app/",
