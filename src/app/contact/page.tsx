@@ -13,10 +13,10 @@ export default function Contact() {
 
       {/* Heading */}
       <h2 className="text-4xl md:text-5xl font-extrabold text-center text-blue-800 mb-6 tracking-tight">
-        Let’s Connect
+        Let's Connect
       </h2>
       <p className="text-center text-gray-600 mb-14 max-w-2xl mx-auto text-lg">
-        I’m always open to collaborations, new opportunities, or even just a friendly chat.  
+        I'm always open to collaborations, new opportunities, or even just a friendly chat.  
         Feel free to reach out through any of the platforms below 👇
       </p>
 

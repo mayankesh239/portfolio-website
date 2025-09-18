@@ -186,7 +186,7 @@ export default function AboutPage() {
         className="max-w-5xl mx-auto text-center mt-20 text-gray-600 text-lg"
       >
         <p>
-          Outside tech, I enjoy traveling, watching movies/web series, reading, blogging, and investing. I play musical instruments like guitar, violin, harmonica, and flute, and I’m improving my chess and photography skills.
+          Outside tech, I enjoy traveling, watching movies/web series, reading, blogging, and investing. I play musical instruments like guitar, violin, harmonica, and flute, and I'm improving my chess and photography skills.
           <br></br>I'm also the author of{" "}
         <a
           href="https://superprofile.bio/vp/the-hidden-economics-of-attention---master-your-time--focus--and-energy"
