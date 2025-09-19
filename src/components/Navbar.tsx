@@ -4,8 +4,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { easeIn, easeOut, easeInOut } from "framer-motion";
+import { motion, AnimatePresence, Variants, Transition } from "framer-motion";
 
 interface NavLink {
   name: string;
@@ -23,67 +22,60 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
+  // Variants for mobile menu animation
   const mobileMenuVariants: Variants = {
-    hidden: { y: -300, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.3, ease: easeOut },
-    },
-    exit: {
-      y: -300,
-      opacity: 0,
-      transition: { duration: 0.3, ease: easeIn },
-    },
+    hidden: { y: "-100%", opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
+    exit: { y: "-100%", opacity: 0, transition: { duration: 0.3, ease: "easeIn" } },
   };
 
+  // Common transition for hover effects
+  const hoverTransition: Transition = { duration: 0.3, ease: "easeInOut" };
+
   return (
-    <header className="w-full top-0 left-0 z-50 bg-gray-900/95 backdrop-blur-md shadow-md">
+    <header className="fixed w-full top-0 left-0 z-50 bg-gray-900/90 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo / Name with hover animation */}
-        <motion.div
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0px 0px 8px rgba(59, 130, 246, 0.8)",
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          {/* <Link
-            href="/"
-            className="text-2xl font-bold text-white hover:text-blue-400 transition-colors duration-300"
-          >
-            Mayankesh Jha
-          </Link> */}
-        </motion.div>
+        {/* Logo / Name */}
+        <Link href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors duration-300">
+          {/* Mayankesh Jha  */}
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8">
           {links.map((link) => (
-            <div key={link.name} className="relative group cursor-pointer">
+            <motion.div
+              key={link.name}
+              className="relative group"
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
+            >
               <Link
                 href={link.href}
                 className="text-white font-medium transition-colors duration-300 group-hover:text-blue-400"
               >
                 {link.name}
               </Link>
-              {/* Animated Underline */}
-              <motion.div
-                className="absolute left-0 bottom-0 h-0.5 bg-blue-400 rounded"
-                initial={{ width: 0 }}
-                whileHover={{ width: "100%" }}
-                transition={{ duration: 0.3, ease: easeInOut }}
+              <motion.span
+                className="absolute left-0 -bottom-1 h-0.5 bg-blue-400 rounded"
+                variants={{
+                  rest: { width: 0 },
+                  hover: { width: "100%" },
+                }}
+                transition={hoverTransition}
               />
-            </div>
+            </motion.div>
           ))}
         </nav>
 
         {/* Mobile Hamburger */}
-        <div
-          className="md:hidden text-white text-2xl cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
+        <button
+          className="md:hidden text-white text-2xl"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle menu"
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -97,18 +89,14 @@ export default function Navbar() {
             variants={mobileMenuVariants}
           >
             {links.map((link) => (
-              <motion.div
+              <Link
                 key={link.name}
-                whileHover={{
-                  scale: 1.1,
-                  color: "#3B82F6",
-                  transition: { duration: 0.2 },
-                }}
-                className="text-white font-medium text-lg cursor-pointer"
+                href={link.href}
+                className="text-white font-medium text-lg hover:text-blue-400 transition-colors duration-300"
                 onClick={() => setMenuOpen(false)}
               >
-                <Link href={link.href}>{link.name}</Link>
-              </motion.div>
+                {link.name}
+              </Link>
             ))}
           </motion.nav>
         )}
