@@ -7,10 +7,15 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { easeIn, easeOut, easeInOut } from "framer-motion";
 
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+interface NavLink {
+  name: string;
+  href: string;
+}
 
-  const links = [
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  const links: NavLink[] = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
