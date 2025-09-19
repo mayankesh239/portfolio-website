@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { easeIn, easeOut, easeInOut } from "framer-motion";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,12 +23,12 @@ export default function Navbar() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.3, ease: "easeOut" as any }, 
+      transition: { duration: 0.3, ease: easeOut },
     },
     exit: {
       y: -300,
       opacity: 0,
-      transition: { duration: 0.3, ease: "easeIn" as any }, 
+      transition: { duration: 0.3, ease: easeIn },
     },
   };
 
@@ -65,7 +66,7 @@ export default function Navbar() {
                 className="absolute left-0 bottom-0 h-0.5 bg-blue-400 rounded"
                 initial={{ width: 0 }}
                 whileHover={{ width: "100%" }}
-                transition={{ duration: 0.3, ease: "easeInOut" as any }}
+                transition={{ duration: 0.3, ease: easeInOut }}
               />
             </div>
           ))}
