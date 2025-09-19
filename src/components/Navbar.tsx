@@ -1,20 +1,9 @@
-// src/components/Navbar.tsx
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { motion, AnimatePresence, Variants, Transition } from "framer-motion";
-
-interface NavLink {
-  name: string;
-  href: string;
-}
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
-  const links: NavLink[] = [
+  const links = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
@@ -22,85 +11,27 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  // Variants for mobile menu animation
-  const mobileMenuVariants: Variants = {
-    hidden: { y: "-100%", opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
-    exit: { y: "-100%", opacity: 0, transition: { duration: 0.3, ease: "easeIn" } },
-  };
-
-  // Common transition for hover effects
-  const hoverTransition: Transition = { duration: 0.3, ease: "easeInOut" };
-
   return (
-    <header className="fixed w-full top-0 left-0 z-50 bg-gray-900/90 backdrop-blur-md shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo / Name */}
-        <Link href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors duration-300">
-          {/* Mayankesh Jha  */}
-        </Link>
+    <header className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Left Side (Blank) */}
+        <div className="w-1/3"></div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
+        {/* Right Side Navigation */}
+        <nav className="w-2/3 flex justify-end gap-10">
           {links.map((link) => (
-            <motion.div
+            <Link
               key={link.name}
-              className="relative group"
-              whileHover="hover"
-              initial="rest"
-              animate="rest"
+              href={link.href}
+              className="relative text-gray-200 font-medium tracking-wide transition-all duration-300 hover:text-blue-400"
             >
-              <Link
-                href={link.href}
-                className="text-white font-medium transition-colors duration-300 group-hover:text-blue-400"
-              >
-                {link.name}
-              </Link>
-              <motion.span
-                className="absolute left-0 -bottom-1 h-0.5 bg-blue-400 rounded"
-                variants={{
-                  rest: { width: 0 },
-                  hover: { width: "100%" },
-                }}
-                transition={hoverTransition}
-              />
-            </motion.div>
+              {link.name}
+              {/* Animated underline */}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
           ))}
         </nav>
-
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.nav
-            className="md:hidden bg-gray-900 w-full py-6 flex flex-col items-center gap-6"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={mobileMenuVariants}
-          >
-            {links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white font-medium text-lg hover:text-blue-400 transition-colors duration-300"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </motion.nav>
-        )}
-      </AnimatePresence>
     </header>
   );
 }
