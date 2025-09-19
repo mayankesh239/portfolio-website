@@ -33,7 +33,7 @@ const projects = [
     description:
       "Full-fledged e-commerce web application using Node.js, Express.js, RESTful API, Redux, React.js, and MongoDB.",
     technologies: ["Node.js", "Express.js", "React.js", "MongoDB", "Redux"],
-    url: "https://github.com/mayankesh239/MatrixMart",
+    url: "https://github.com/mayankesh239/MatrixMart",``
     image: "/matrixMart.png",
   },
   {

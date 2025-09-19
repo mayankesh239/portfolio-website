@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,10 +17,18 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  const mobileMenuVariants = {
+  const mobileMenuVariants: Variants = {
     hidden: { y: -300, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
-    exit: { y: -300, opacity: 0, transition: { duration: 0.3, ease: "easeIn" } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.3, ease: "easeOut" as any }, 
+    },
+    exit: {
+      y: -300,
+      opacity: 0,
+      transition: { duration: 0.3, ease: "easeIn" as any }, 
+    },
   };
 
   return (
@@ -28,7 +36,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo / Name with hover animation */}
         <motion.div
-          whileHover={{ scale: 1.05, textShadow: "0px 0px 8px rgba(59, 130, 246, 0.8)" }}
+          whileHover={{
+            scale: 1.05,
+            textShadow: "0px 0px 8px rgba(59, 130, 246, 0.8)",
+          }}
           transition={{ duration: 0.3 }}
         >
           {/* <Link
@@ -54,14 +65,17 @@ export default function Navbar() {
                 className="absolute left-0 bottom-0 h-0.5 bg-blue-400 rounded"
                 initial={{ width: 0 }}
                 whileHover={{ width: "100%" }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" as any }}
               />
             </div>
           ))}
         </nav>
 
         {/* Mobile Hamburger */}
-        <div className="md:hidden text-white text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
+        <div
+          className="md:hidden text-white text-2xl cursor-pointer"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
@@ -79,7 +93,11 @@ export default function Navbar() {
             {links.map((link) => (
               <motion.div
                 key={link.name}
-                whileHover={{ scale: 1.1, color: "#3B82F6", transition: { duration: 0.2 } }}
+                whileHover={{
+                  scale: 1.1,
+                  color: "#3B82F6",
+                  transition: { duration: 0.2 },
+                }}
                 className="text-white font-medium text-lg cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >
