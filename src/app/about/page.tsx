@@ -20,7 +20,7 @@ const experiences = [
     duration: "Jul 2024 - Present",
     logo: "/infineon.jpeg",
     highlights: [
-      "As an Embedded Software Engineer at Infineon Technologies, I am responsible for designing and implementing device drivers for Infineon&apos;s microcontrollers used in the automotive industry.",
+      "As an Embedded Software Engineer at Infineon Technologies, I am responsible for designing and implementing device drivers for Infineon's microcontrollers used in the automotive industry.",
       "Involved in the design and development of Flash EEPROM Emulation driver (MCAL in AUTOSAR) for the Aurix 3G microcontroller.",
       "Adhered to MISRA C coding standards, used Polyspace, and followed embedded coding standards and best practices.",
       "Exposure to safety standard ISO 26262, including requirements analysis and implementation.",
@@ -49,7 +49,7 @@ const experiences = [
       "Automated API related CVEs acquisition for website display using python. It has saved 4-5 hrs of work per week",
       "Automated test templates (1000+) display on the Akto website using python script. It has saved 3-4 hrs of work per week.",
       "Modified a template used in AWS. Changed launch configuration to launch template.",
-      "Integrated Mixpanel to track some events in the Akto&apos;s backend.",
+      "Integrated Mixpanel to track some events in the Akto's backend.",
     ],
   },
   {

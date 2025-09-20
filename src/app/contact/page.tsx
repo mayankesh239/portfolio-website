@@ -1,8 +1,20 @@
 "use client";
 
-import { FaLinkedin, FaGithub, FaTwitter, FaMedium } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaMedium } from "react-icons/fa";
 
 export default function Contact() {
+  // Custom X (Twitter) SVG
+  const XIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 1227"
+      fill="currentColor"
+      className="w-8 h-8"
+    >
+      <path d="M714.163 519.284L1160.89 0H1051.9L667.137 450.887L357.99 0H0L468.447 681.821L0 1226.37H109.988L514.936 750.218L842.01 1226.37H1200L714.137 519.284H714.163ZM569.18 693.983L520.648 626.012L150.011 79.6944H306.545L598.705 501.697L647.236 569.668L1021.59 1146.3H865.057L569.18 693.983Z" />
+    </svg>
+  );
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-100 via-white to-cyan-100 px-6 overflow-hidden">
       {/* Background Glow */}
@@ -23,10 +35,10 @@ export default function Contact() {
       {/* Social Links */}
       <div className="flex justify-center gap-10 flex-wrap">
         {[
-          { icon: <FaLinkedin />, url: "https://linkedin.com/in/mayankeshjha", label: "LinkedIn", color: "from-blue-500 to-blue-700" },
+          { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/mayankesh-jha-15446b206/", label: "LinkedIn", color: "from-blue-500 to-blue-700" },
           { icon: <FaGithub />, url: "https://github.com/mayankesh239", label: "GitHub", color: "from-gray-700 to-black" },
-          { icon: <FaTwitter />, url: "https://twitter.com/mayankesh239", label: "Twitter", color: "from-sky-400 to-sky-600" },
-          { icon: <FaMedium />, url: "https://medium.com/@mayankesh239", label: "Medium", color: "from-gray-800 to-gray-900" },
+          { icon: XIcon, url: "https://x.com/MayankeshJha_", label: "X", color: "from-black to-gray-800" },
+          { icon: <FaMedium />, url: "https://medium.com/@mayankesh.ss", label: "Medium", color: "from-gray-800 to-gray-900" },
         ].map((social, index) => (
           <a
             key={index}

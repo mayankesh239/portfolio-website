@@ -10,7 +10,11 @@ type Props = {
 
 export const metadata = {
   title: "Mayankesh Jha | Portfolio",
-  description: "Portfolio of Mayankesh Jha, embedded engineer and software developer.",
+  description: "Portfolio of Mayankesh Jha",
+  icons: {
+    icon: "/MayankeshJha.jpeg", // Path to your favicon
+  },
+
 };
 
 export default function RootLayout({ children }: Props) {
