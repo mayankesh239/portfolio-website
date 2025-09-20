@@ -18,7 +18,7 @@ export default function Home() {
           className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"
         >
           <Image
-            src="/MayankeshJha.jpeg"
+            src="/MayankeshJha.png"
             alt="Mayankesh Jha"
             fill
             className="object-cover"
