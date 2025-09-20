@@ -12,7 +12,7 @@ export const metadata = {
   title: "Mayankesh Jha | Portfolio",
   description: "Portfolio of Mayankesh Jha",
   icons: {
-    icon: "/MayankeshJha.jpeg", // Path to your favicon
+    icon: "/MayankeshJha.jpeg", 
   },
 
 };
